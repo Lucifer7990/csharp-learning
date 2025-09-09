@@ -1,0 +1,14 @@
+D:\Dhruv\C#\temp\obj\Debug\net8.0\temp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dhruv\C#\temp\obj\Debug\net8.0\temp.AssemblyInfoInputs.cache
+D:\Dhruv\C#\temp\obj\Debug\net8.0\temp.AssemblyInfo.cs
+D:\Dhruv\C#\temp\obj\Debug\net8.0\temp.csproj.CoreCompileInputs.cache
+D:\Dhruv\C#\temp\bin\Debug\net8.0\temp.exe
+D:\Dhruv\C#\temp\bin\Debug\net8.0\temp.deps.json
+D:\Dhruv\C#\temp\bin\Debug\net8.0\temp.runtimeconfig.json
+D:\Dhruv\C#\temp\bin\Debug\net8.0\temp.dll
+D:\Dhruv\C#\temp\bin\Debug\net8.0\temp.pdb
+D:\Dhruv\C#\temp\obj\Debug\net8.0\temp.dll
+D:\Dhruv\C#\temp\obj\Debug\net8.0\refint\temp.dll
+D:\Dhruv\C#\temp\obj\Debug\net8.0\temp.pdb
+D:\Dhruv\C#\temp\obj\Debug\net8.0\temp.genruntimeconfig.cache
+D:\Dhruv\C#\temp\obj\Debug\net8.0\ref\temp.dll
