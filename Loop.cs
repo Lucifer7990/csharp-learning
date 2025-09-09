@@ -1,7 +1,7 @@
 using Constants;
-class Program
+class Program1
 {
-    static void Main()
+    static void Main1()
     {
         Console.Write("How many numbers do you want to enter? ");
         int count;
