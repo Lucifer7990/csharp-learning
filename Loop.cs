@@ -13,10 +13,23 @@ class Program
         {
             Console.Write($"Enter number {i + 1}: ");
             if (!int.TryParse(Console.ReadLine(), out nums[i]))
+            {
                 Console.WriteLine("Invalid input. Please enter a valid integer.");
+                i--;
+            }
         }
-        
-        Console.WriteLine(nums);
+
+        Console.Write("You entered: ");
+        foreach (int n in nums)
+        {
+            Console.Write(n);
+            Console.Write(" ");
+        }
+
+        Console.WriteLine($"Sum = {nums.Sum()}");
+        Console.WriteLine($"Largest = {nums.Max()}");
+        Console.WriteLine($"Smallest = {nums.Min()}");
+
     }
 }
 
