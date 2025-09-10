@@ -12,3 +12,4 @@ D:\Dhruv\C#\temp\obj\Debug\net8.0\refint\temp.dll
 D:\Dhruv\C#\temp\obj\Debug\net8.0\temp.pdb
 D:\Dhruv\C#\temp\obj\Debug\net8.0\temp.genruntimeconfig.cache
 D:\Dhruv\C#\temp\obj\Debug\net8.0\ref\temp.dll
+D:\Dhruv\C#\temp\obj\Debug\net8.0\temp.sourcelink.json

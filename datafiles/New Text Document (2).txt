@@ -30,54 +30,6 @@ investopedia.com
 Stochastic Calculus
 
 Stochastic calculus extends calculus to model continuous-time random processes. In finance, it underpins the modeling of asset price dynamics via stochastic differential equations (SDEs). A classic example is the Geometric Brownian Motion SDE for stock price 
-𝑆
-𝑡
-S
-t
-	​
-
-: 
-𝑑
-𝑆
-𝑡
-=
-𝜇
-𝑆
-𝑡
- 
-𝑑
-𝑡
-+
-𝜎
-𝑆
-𝑡
- 
-𝑑
-𝑊
-𝑡
-dS
-t
-	​
-
-=μS
-t
-	​
-
-dt+σS
-t
-	​
-
-dW
-t
-	​
-
-, where 
-𝑊
-𝑡
-W
-t
-	​
-
  is a Wiener process. Key tools include Itô’s Lemma (the stochastic chain rule) and the Girsanov Theorem (change of measure to risk-neutral). These allow derivation of pricing formulas and hedging strategies: for example, applying Itô’s Lemma to a derivative price leads to the Black–Scholes PDE. Itô calculus “deals with time and random variables” and “has broad applications in economics and quantitative finance,” most famously yielding the Black–Scholes option pricing model
 math.uchicago.edu
 .
@@ -97,13 +49,7 @@ investopedia.com
 Partial Differential Equations (PDEs)
 
 Many derivative pricing problems reduce to solving PDEs. The Black–Scholes-Merton framework produces a parabolic PDE for the option price 
-𝑉
-(
-𝑆
-,
-𝑡
-)
-V(S,t): this PDE reflects no-arbitrage and replicating portfolios. Solving the Black–Scholes PDE (with terminal/boundary conditions) yields the classic closed-form formula for European options
+this PDE reflects no-arbitrage and replicating portfolios. Solving the Black–Scholes PDE (with terminal/boundary conditions) yields the classic closed-form formula for European options
 investopedia.com
 . More generally, pricing models (with local volatility, stochastic volatility, or multiple risk factors) lead to higher-dimensional PDEs. PDEs are also used in interest-rate models (e.g. bond pricing PDEs) and in computing transition densities (Fokker–Planck/Kolmogorov equations). Numerical PDE solvers (finite differences, finite elements) are widely used for pricing American/exotic options where closed forms do not exist.
 
@@ -120,14 +66,7 @@ Feynman–Kac Formula: Links PDE solutions to expected values under an SDE. It p
 Linear Algebra
 
 Linear algebra is fundamental for modeling large-scale financial systems and portfolios. Vectors and matrices represent asset returns, covariances, and factor loadings. For example, a portfolio of 
-𝑛
-n assets has an 
-𝑛
-n-dimensional weight vector and an 
-𝑛
-×
-𝑛
-n×n covariance matrix of returns. Portfolio variance is computed via matrix quadratic forms. Eigenvalues and eigenvectors are used in risk analysis: principal component analysis (PCA) finds the main risk factors in a covariance matrix. In factor models, returns are modeled as linear combinations of factors, which is a linear mapping problem. Efficient numerical linear algebra routines speed up computation of large covariance matrices, matrix inversions (for portfolio optimization), and regression estimations.
+covariance matrix of returns. Portfolio variance is computed via matrix quadratic forms. Eigenvalues and eigenvectors are used in risk analysis: principal component analysis (PCA) finds the main risk factors in a covariance matrix. In factor models, returns are modeled as linear combinations of factors, which is a linear mapping problem. Efficient numerical linear algebra routines speed up computation of large covariance matrices, matrix inversions (for portfolio optimization), and regression estimations.
 
 Covariance Matrix: Captures asset co-movements. It “helps understand relationships between assets and construct portfolios that optimize risk and return”
 pyquantnews.com
@@ -246,105 +185,6 @@ pyquantnews.com
 .
 
  
-
-Key elements include:
-
-Mean–Variance Optimization: Solve 
-min
-⁡
-𝑤
- 
-𝑤
-⊤
-Σ
-𝑤
-min
-w
-	​
-
-w
-⊤
-Σw subject to 
-𝑤
-⊤
-1
-=
-1
-w
-⊤
-1=1, 
-𝑤
-⊤
-𝜇
-=
-𝑟
-𝑡
-𝑎
-𝑟
-𝑔
-𝑒
-𝑡
-w
-⊤
-μ=r
-target
-	​
-
-. Here 
-Σ
-Σ is the covariance matrix
-pyquantnews.com
-.
-
-Factor Models & PCA: To reduce estimation error, practitioners use factor models (e.g. Fama–French 3-factor) or PCA (principal components of the covariance matrix) to approximate risks
-pyquantnews.com
-.
-
-CAPM and Single-Factor Models: The CAPM posits a linear relation 
-𝐸
-[
-𝑅
-𝑖
-]
-=
-𝑅
-𝑓
-+
-𝛽
-𝑖
-(
-𝐸
-[
-𝑅
-𝑚
-]
-−
-𝑅
-𝑓
-)
-E[R
-i
-	​
-
-]=R
-f
-	​
-
-+β
-i
-	​
-
-(E[R
-m
-	​
-
-]−R
-f
-	​
-
-). In regression form, “the CAPM uses linear regression to describe the relationship between an asset’s expected return and its risk”
-pyquantnews.com
-.
 
 Advanced Optimization: Beyond mean-variance, modern approaches use utility maximization (incorporating investor risk aversion) or minimize downside risk (CVaR optimization). Constraints on weights (no shorting, sector limits) turn these into constrained convex programs.
 
