@@ -1,8 +1,54 @@
 using System.Text;
 class Markov
 {
-
     static void Main()
+    {
+        Console.WriteLine(GenrateString(500));
+    }
+
+
+    static string GenrateString(int? c=20, string? abc="the")
+    {
+        var dict = GetStructuredData();
+        Random rnd = new Random();
+        string str = "";
+        int count = c ?? 20;
+        string Word = abc ?? "the";
+        for (var i = 0; i < count; i++)
+        {
+
+            int pos = rnd.Next(dict[Word].Count);
+            str += Word + " ";
+            Word = dict[Word][pos];
+
+        }
+        return str;
+    }
+    static Dictionary<string, List<string>> GetStructuredData()
+    {
+
+        Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+        string[] arr = GetStringArr();
+        string pointer = "";
+        foreach (var word in arr)
+        {
+            if (!dict.ContainsKey(word) && word!="")
+            {
+                dict.Add(word, []);
+            }
+
+            if (pointer != "")
+            {
+                dict[pointer].Add(word);
+            }
+
+            pointer = word;
+        }
+
+        return dict;
+
+    }
+    static string[] GetStringArr()
     {
         string all1 = File.ReadAllText(@".\datafiles\indian_history.txt", Encoding.UTF8);
         string all2 = File.ReadAllText(@".\datafiles\New Text Document.txt", Encoding.UTF8);
@@ -43,11 +89,7 @@ class Markov
 
         string[] arr = str.Split(" ");
 
-        foreach (var a in arr)
-        {
-            if(a.Length==2)
-                Console.Write(a + " ");
-        }
+        return arr;
 
 
     }
