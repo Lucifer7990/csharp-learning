@@ -3,21 +3,17 @@ class Markov
 {
     static void Main()
     {
-        Console.WriteLine(GenrateString(500));
+        Console.WriteLine(GenrateString(1));
     }
 
 
-    static string GenrateString(int? c=20, string? abc="the")
+    static string GenrateString(int count = 20, string Word = "the")
     {
         var dict = GetStructuredData();
-        Random rnd = new Random();
         string str = "";
-        int count = c ?? 20;
-        string Word = abc ?? "the";
         for (var i = 0; i < count; i++)
         {
-
-            int pos = rnd.Next(dict[Word].Count);
+            int pos = GenrateRandomNext(dict[Word].Count);
             str += Word + " ";
             Word = dict[Word][pos];
 
@@ -32,7 +28,7 @@ class Markov
         string pointer = "";
         foreach (var word in arr)
         {
-            if (!dict.ContainsKey(word) && word!="")
+            if (!dict.ContainsKey(word) && word != "")
             {
                 dict.Add(word, []);
             }
@@ -57,25 +53,11 @@ class Markov
 
         string str = all1 + all3 + all2;
         str = str.ToLower();
-        str = str.Replace("–", " ");
-        str = str.Replace("-", " ");
-        str = str.Replace("#", " ");
-        str = str.Replace("*", " ");
-        str = str.Replace(";", " ");
-        str = str.Replace("\"", " ");
-        str = str.Replace("=", " ");
-        str = str.Replace("\n", " ");
-        str = str.Replace("\r", " ");
-        str = str.Replace("\t", " ");
-        str = str.Replace("  ", " ");
-        str = str.Replace("  ", " ");
-        str = str.Replace("  ", " ");
-        str = str.Replace("  ", " ");
 
         foreach (var a in str)
         {
             int b = a;
-            if ((b >= 97 && b <= 122) || a == ' ')
+            if ((b >= 97 && b <= 122) || a == ' ' || a == '.' || a == ',')
             {
 
             }
@@ -85,6 +67,7 @@ class Markov
             }
 
         }
+        Console.WriteLine(str);
         str = str.Replace("  ", " "); str = str.Replace("  ", " "); str = str.Replace("  ", " ");
 
         string[] arr = str.Split(" ");
@@ -130,6 +113,14 @@ class Markov
         Console.WriteLine(per);
         Console.WriteLine(vovlCount);
         Console.WriteLine(Count);
+
+    }
+
+    static int GenrateRandomNext(int num = 100)
+    {
+        Random rnd = new Random();
+
+        return rnd.Next(num);
 
     }
 }
