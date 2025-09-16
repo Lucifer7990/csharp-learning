@@ -1,7 +1,7 @@
 using System.Text;
 class Markov
 {
-    static void Main()
+    static void Mainnnnnn()
     {
         Console.WriteLine(GenrateString(1));
     }
